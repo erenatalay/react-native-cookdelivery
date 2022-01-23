@@ -41,11 +41,15 @@ const filter = require("../assets/icons/filter.png")
 const calories = require("../assets/icons/calories.png")
 const love = require("../assets/icons/love.png")
 const down_arrow = require("../assets/icons/down_arrow.png")
-
+const category = require("../assets/icons/category.png")
+const beverage = require("../assets/icons/beverage.png")
+ 
 export default {
     home,
     down_arrow,
     cart,
+    beverage,
+    category,
     love,
     calories,
     logout,

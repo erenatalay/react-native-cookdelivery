@@ -19,7 +19,7 @@ import Home from "./Home"
 import Cart from "./Cart"
 import Favourite from "./Favourite"
 import Notification from "./Notification"
-import Search from "./Search"
+import Category from './Category';
 
 
 const TabButton = ({ label, icon, isFocused, onPress, outerContainerStyle, innerContainerStyle }) => {
@@ -102,7 +102,7 @@ const MainLayout = ({ drawerAnimationStyle, navigation }) => {
             })
 
         }
-        if (selectedTab == constants.screens.search) {
+        if (selectedTab == constants.screens.category) {
             flatListRef?.current?.scrollToIndex({
                 index: 1
             })
@@ -247,7 +247,7 @@ const MainLayout = ({ drawerAnimationStyle, navigation }) => {
                                 {item.label == constants.screens.home && <Home />}
                                 {item.label == constants.screens.cart && <Cart />}
                                 {item.label == constants.screens.favourite && <Favourite />}
-                                {item.label == constants.screens.search && <Search />}
+                                {item.label == constants.screens.category && <Category />}
                                 {item.label == constants.screens.notification && <Notification />}
 
 
@@ -303,11 +303,11 @@ const MainLayout = ({ drawerAnimationStyle, navigation }) => {
                     />
 
                     <TabButton
-                        label={constants.screens.search}
-                        icon={icons.search}
+                        label={constants.screens.category}
+                        icon={icons.category}
 
-                        isFocused={selectedTab == constants.screens.search}
-                        onPress={() => dispatch(setSelectedTab(constants.screens.search))}
+                        isFocused={selectedTab == constants.screens.category}
+                        onPress={() => dispatch(setSelectedTab(constants.screens.category))}
 
                     />
 

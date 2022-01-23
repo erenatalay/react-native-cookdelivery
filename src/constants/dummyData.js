@@ -12,13 +12,19 @@ const categories = [
     },
     {
         id: 2,
-        name: "Fruit Item",
+        name: "Fruit",
         icon: require("../assets/icons/cherry.png")
     },
     {
         id: 3,
-        name: "Rice Item",
+        name: "Rice",
         icon: require("../assets/icons/rice.png")
+    },
+    {
+        id : 4,
+        name : "Beverages",
+        icon: require("../assets/icons/beverage.png")
+
     }
 ]
 
@@ -111,6 +117,8 @@ const menu = [
     },
 
 ]
+
+
 
 const sizes = [
     {

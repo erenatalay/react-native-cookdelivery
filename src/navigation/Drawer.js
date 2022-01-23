@@ -61,7 +61,7 @@ const CustomDrawerContent = ({ navigation }) => {
     const dispatch = useDispatch()
 
     const handleLogout = () => {
-        dispatch(logout(navigation))
+        dispatch(logout())
     }
     const selectedTab = useSelector(state => state.tab?.selectedTab)
     return (

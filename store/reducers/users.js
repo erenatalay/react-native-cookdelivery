@@ -15,12 +15,23 @@ export const users = (state = initialState, action) => {
             return {
                 ...state,
                 user: action.paylaod,
+                authenticated: true,
 
             }
         case "REMOVE_USER":
             return {
                 ...state,
-                user: action.paylaod
+                user: null,
+                authenticated: false,
+
+            }
+        case "AUTH_USER":
+            const {userData,isAuth} = action.paylaod;
+            return {
+                ...state,
+                authenticated: isAuth,
+                user: userData,
+
             }
         default:
             return state;

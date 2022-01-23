@@ -1,7 +1,7 @@
 const screens = {
     main_layout: "MainLayout",
     home: "Home",
-    search: "Search",
+    category: "Category",
     cart: "Cart",
     favourite: "Favourite",
     notification: "Notification",
@@ -15,7 +15,7 @@ const bottom_tabs = [
     },
     {
         id: 1,
-        label: screens.search,
+        label: screens.category,
     },
     {
         id: 2,

@@ -33,3 +33,11 @@ export const logout = () => dispatch => {
     })
 
 }
+
+
+export const authFetch = (data) => dispatch => {
+    dispatch({
+        type: "SET_USER",
+        payload: data
+    })
+}
