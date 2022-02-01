@@ -159,6 +159,13 @@ const myCart = [
 
 ]
 
+const myFavourite = [
+    hamburger,
+    vegBiryani,
+    wrapSandwich
+]
+
+
 const myCards = [
     {
         id: 1,
@@ -241,4 +248,5 @@ export default {
     myCards,
     allCards,
     fromLocs,
+    myFavourite
 }

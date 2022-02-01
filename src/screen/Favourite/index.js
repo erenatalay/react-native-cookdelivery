@@ -1,15 +1,32 @@
 import React from 'react'
-import {Text,View} from "react-native"
+import { Text, View, FlatList } from "react-native"
+import VerticalFoodCardButton from '../../components/VerticalFoodCardButton';
+import { COLORS, FONTS, SIZES, icons, data } from "../../constants";
+
 const Favourite = () => {
     return (
         <View style={{
-            flexDirection : "column",
-            flex : 1,
-            justifyContent : "center",
-            alignItems : "center"
-        }}>
+            flex: 1,
+            flexDirection: "column",
 
-            <Text>Favourite Screen</Text>     
+        }}>
+            <FlatList
+                style={{
+                    paddingHorizontal: SIZES.padding,
+                    marginTop: SIZES.radius,
+
+                }}
+                data={data.myFavourite}
+                keyExtractor={item => `${item.id}`}
+
+                renderItem={({ item, index }) => (
+                    <VerticalFoodCardButton item={item} />
+
+                )}
+                ListFooterComponent={
+                    <View style={{ height: 150 }}></View>
+                }
+            />
         </View>
     )
 }
