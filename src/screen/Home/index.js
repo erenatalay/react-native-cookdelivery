@@ -14,6 +14,7 @@ import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
 import dummyData from "../../constants/dummyData";
 import HorizontalFoodCard from "../../components/HorizontalFoodCard";
 import VerticalFoodCard from "../../components/VerticalFoodCard";
+import { useNavigation } from "@react-navigation/native";
 
 const Section = ({title,onPress,children}) => {
     return (
@@ -48,7 +49,7 @@ const Section = ({title,onPress,children}) => {
 
 
 
-const Home = ({ navigation }) => {
+const Home = () => {
     const [selectedCategoryId,setSelectedCategoryId] = React.useState(1)
     const [selectedMenuType, setSelectedMenuType] = React.useState(1)
     const [menuList,setMenuList] = React.useState([])
@@ -57,7 +58,7 @@ const Home = ({ navigation }) => {
     React.useEffect(() => {
         handleChangeCategory(selectedCategoryId,selectedMenuType)
     },[])
-
+    const navigation = useNavigation()
     const handleChangeCategory = (categoryId,menuTypeId) => {
         let selectedRecommend = dummyData.menu.find(a => a.name === "Recommended")
         let selectedPopular = dummyData.menu.find(a => a.name == "Popular")
@@ -255,7 +256,7 @@ const Home = ({ navigation }) => {
                     marginRight : index == popular.length -1 ? SIZES.padding : 0
                 }}
                 item={item}
-                onPress={() => console.log("Vertical Food Card")}
+                onPress={() => navigation.push("FoodDetail")}
                />
             )}
 

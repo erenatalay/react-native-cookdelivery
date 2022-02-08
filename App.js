@@ -14,6 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import MyCard from "./src/screen/MyCard";
 import Drawer from "./src/navigation/Drawer"
 import { authFetch } from "./store/actions/users";
+import FoodDetail from "./src/screen/FoodDetail";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const App = () => {
                         <Stack.Screen name="Home" component={Drawer} />
                         <Stack.Screen name="Restaurant" component={Restaurant} />
                         <Stack.Screen name="MyCard" component={MyCard} />
+                        <Stack.Screen name="FoodDetail" component={FoodDetail} />
                     </Stack.Navigator>
                 )
                     :
