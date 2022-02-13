@@ -45,10 +45,13 @@ const category = require("../assets/icons/category.png")
 const beverage = require("../assets/icons/beverage.png")
 const clock = require("../assets/icons/clock.png")
 const dollar = require("../assets/icons/dollar.png")
-
+const minus = require("../assets/icons/minus.png")
+const plus = require("../assets/icons/plus.png")
 export default {
     home,
     down_arrow,
+    minus,
+    plus,
     clock,
     dollar,
     cart,
