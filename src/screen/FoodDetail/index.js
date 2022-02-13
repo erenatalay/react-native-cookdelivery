@@ -158,7 +158,7 @@ const FoodDetail = ({ navigation }) => {
 
                     {/* Ratings Durations Shipping */}
 
-                    <View style={{ flexDirection: "row", marginTop: SIZES.padding, paddingHorizontal: 10 }}>
+                    <View style={{ flexDirection: "row", marginTop: SIZES.padding, paddingHorizontal: 5 }}>
                         {/* Ratings */}
                         <IconLabel
                             containerStyle={{
@@ -269,7 +269,7 @@ const FoodDetail = ({ navigation }) => {
             <View style={{
                 flexDirection: "row",
                 marginVertical: SIZES.padding,
-                paddingHorizontal: 25,
+                paddingHorizontal: 30,
                 alignItems: "center"
             }}>
                 <Image source={data.myProfile?.profile_image}
@@ -335,7 +335,7 @@ const FoodDetail = ({ navigation }) => {
         )
     }
     return (
-        <View style={{flex : 1}}>
+        <View style={{flex : 1,backgroundColor : "white"}}>
             {renderHeader()}
 
             <ScrollView >
