@@ -177,7 +177,7 @@ const Home = () => {
                         width : 150
                     }}
                     item={item}
-                    onPress={() => console.log("HorizontalFoodCard")}
+                    onPress={() =>  navigation.push("FoodDetail")}
                 
                 />
             )}
@@ -336,7 +336,7 @@ const Home = () => {
                         width : 110
                     }}
                     item={item}
-                    onPress={() => console.log("HorizontalFoodCard")}
+                    onPress={() =>  navigation.push("FoodDetail")}
                    />
                 )
             }}

@@ -11,6 +11,7 @@ import StepperInput from "../../components/StepperInput";
 const FoodDetail = ({ navigation }) => {
     const [foodItem, setFoodItem] = React.useState(data.vegBiryani)
     const [selectedSize, setSelectedSize] = React.useState("")
+    const [qty,setQty] = React.useState(1)
     const renderHeader = () => {
         return (
             <View style={{ flexDirection: "row" }}>
@@ -102,7 +103,7 @@ const FoodDetail = ({ navigation }) => {
             <View style={{
                 marginTop : 10,
                 marginBottom: SIZES.padding,
-                paddingHorizontal: 15
+                paddingHorizontal: 5
             }}>
 
                 {/* Food Card */}
@@ -116,7 +117,7 @@ const FoodDetail = ({ navigation }) => {
                         flexDirection: "row",
                         justifyContent: "space-between",
                         marginTop: SIZES.base,
-                        paddingHorizontal: 10
+                        paddingHorizontal: 5
                     }}>
 
                         {/* Calories */}
@@ -148,28 +149,31 @@ const FoodDetail = ({ navigation }) => {
 
                 <View style={{ marginTop: SIZES.padding }}>
                     {/* Name & description */}
-                    <Text style={{ ...FONTS.h1, paddingHorizontal: SIZES.radius }}>
+                    <Text style={{ ...FONTS.h1, paddingHorizontal: 10 }}>
                         {foodItem?.name}
                     </Text>
-                    <Text style={{ ...FONTS.body3, paddingHorizontal: SIZES.radius, marginTop: SIZES.base, color: COLORS.darkgray, textAlign: "justify", }}>
+                    <Text style={{ ...FONTS.body3, paddingHorizontal:10, marginTop: SIZES.base, color: COLORS.darkgray, textAlign: "justify", }}>
                         {foodItem?.description}
                     </Text>
 
                     {/* Ratings Durations Shipping */}
 
-                    <View style={{ flexDirection: "row", marginTop: SIZES.padding, paddingHorizontal: SIZES.radius }}>
+                    <View style={{ flexDirection: "row", marginTop: SIZES.padding, paddingHorizontal: 10 }}>
                         {/* Ratings */}
                         <IconLabel
                             containerStyle={{
                                 backgroundColor: COLORS.primary,
+                                paddingRight : 15
                             }}
                             icon={icons.star}
                             iconStyle={{
-                                tintColor: COLORS.white
+                                tintColor: COLORS.white,
+                                
                             }}
                             label="4.5"
                             labelStyle={{
-                                color: COLORS.white
+                                color: COLORS.white,
+                                
                             }}
 
                         />
@@ -207,7 +211,7 @@ const FoodDetail = ({ navigation }) => {
                         flexDirection: "row",
                         marginTop: SIZES.padding,
                         alignItems: "center",
-                        paddingHorizontal: SIZES.padding * 3
+                        paddingHorizontal: 20
 
                     }}>
                         <Text style={{ ...FONTS.h3 }}>
@@ -229,7 +233,7 @@ const FoodDetail = ({ navigation }) => {
                                             buttonContainerStyle={{
                                                 width: 55,
                                                 height: 55,
-                                                margin: SIZES.base,
+                                                marginRight: SIZES.base *3,
 
                                                 borderWidth: 1,
                                                 borderRadius: 6,
@@ -265,7 +269,7 @@ const FoodDetail = ({ navigation }) => {
             <View style={{
                 flexDirection: "row",
                 marginVertical: SIZES.padding,
-                paddingHorizontal: SIZES.padding * 4,
+                paddingHorizontal: 25,
                 alignItems: "center"
             }}>
                 <Image source={data.myProfile?.profile_image}
@@ -301,13 +305,32 @@ const FoodDetail = ({ navigation }) => {
             <View style={{
                 flexDirection :"row",
                 alignItems : "center",
-               
+                height : 90,
                 paddingHorizontal : SIZES.padding *3,
-                paddingBottom : SIZES.radius
             }}>
                 {/* Stepper Input */}
-                    <StepperInput value={3}/>
+                    <StepperInput value={qty} onAdd={() => setQty(qty + 1)} onMinus={() => {
+                        if(qty > 1){
+                            setQty(qty -1)
+                        }
+                    }}/>
                 {/* Text Button */}
+
+                <TextButton buttonContainerStyle={{
+                    flex : 1,
+                    flexDirection : "row",
+                    height : 60,
+                    marginLeft : SIZES.radius,
+                    paddingHorizontal : SIZES.radius,
+                    borderRadius : SIZES.radius,
+                    backgroundColor : COLORS.primary,
+
+
+                }}
+                labelStyle={{color : "white"}}
+                    label="Buy Now"
+                    label2="$16.00"
+                />
             </View>
         )
     }

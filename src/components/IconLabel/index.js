@@ -14,7 +14,7 @@ const IconLabel = ({ containerStyle, icon, iconStyle, label, labelStyle }) => {
             ...containerStyle,
             flexDirection: "row",
              paddingVertical: SIZES.base, 
-             paddingHorizontal: 5,
+             paddingHorizontal: 15,
              borderRadius: SIZES.radius
         }}>
             <Image source={icon} 
