@@ -47,9 +47,13 @@ const clock = require("../assets/icons/clock.png")
 const dollar = require("../assets/icons/dollar.png")
 const minus = require("../assets/icons/minus.png")
 const plus = require("../assets/icons/plus.png")
+const correct = require("../assets/icons/correct.png")
+const cancel = require("../assets/icons/cancel.png")
 export default {
     home,
     down_arrow,
+    cancel,
+    correct,
     minus,
     plus,
     clock,

@@ -15,6 +15,7 @@ import MyCard from "./src/screen/MyCard";
 import Drawer from "./src/navigation/Drawer"
 import { authFetch } from "./store/actions/users";
 import FoodDetail from "./src/screen/FoodDetail";
+import AddCard from "./src/screen/AddCart";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -45,6 +46,7 @@ const App = () => {
                         <Stack.Screen name="Home" component={Drawer} />
                         <Stack.Screen name="Restaurant" component={Restaurant} />
                         <Stack.Screen name="MyCard" component={MyCard} />
+                        <Stack.Screen name="AddCard" component={AddCard} />
                         <Stack.Screen name="FoodDetail" component={FoodDetail} />
                     </Stack.Navigator>
                 )

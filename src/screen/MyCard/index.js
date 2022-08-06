@@ -3,9 +3,9 @@ import { SafeAreaView, View, Text, TouchableOpacity, Image, ScrollView } from "r
 import { COLORS, FONTS, SIZES, icons, data } from "../../constants";
 import CardItem from "../../components/CardItem";
 import Button from "../../components/Button";
-
-const MyCard = ({ navigation }) => {
-
+import { useNavigation } from '@react-navigation/native';
+const MyCard = () => {
+    const navigation = useNavigation();
     const [selectedCard, setSelectedCard] = React.useState(null)
     const renderHeader = () => {
         return (
@@ -113,7 +113,15 @@ const MyCard = ({ navigation }) => {
                     paddingHorizontal : SIZES.padding
                 }}
             >
-            <Button title={selectedCard?.key == "NewCard" ? "Add" : "Place your Order"} onPress={null} 
+            <Button title={selectedCard?.key == "NewCard" ? "Add" : "Place your Order"} onPress={() => {
+                if(selectedCard?.key == "NewCard"){
+                    navigation.push("AddCard",{selectedCard : selectedCard})
+
+                }else{
+                    navigation.push("Checkout",{selectedCard : selectedCard})
+
+                }
+            }} 
             disabled={selectedCard === null}
                btnStyle={{height : 60, backgroundColor : selectedCard === null ? "gray" : COLORS.primary}}
                

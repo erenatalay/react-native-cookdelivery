@@ -30,6 +30,9 @@ const teh_c_peng = require("../assets/images/teh-c-peng.jpg");
 const tomato_pasta = require("../assets/images/tomato-pasta.jpg");
 const logo = require("../assets/images/logo-light.png")
 const headerImage = require("../assets/images/headerimage.png")
+const card = require("../assets/images/card.png")
+
+
 export default {
     avatar_1,
     avatar_2,
@@ -41,7 +44,7 @@ export default {
     burger_restaurant_2,
     chicago_hot_dog,
     crispy_chicken_burger,
-
+    card,
     fries_restaurant,
     hawaiian_pizza,
     honey_mustard_chicken_burger,
