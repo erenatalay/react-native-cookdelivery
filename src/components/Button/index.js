@@ -5,7 +5,7 @@ import Colors from '../../theme/Colors';
 import Fonts from '../../theme/Fonts';
 const Button = (props) => {
     return (
-        <TouchableOpacity style={styles.buttonStyle} onPress={props.onPress} disabled={props.disabled}>
+        <TouchableOpacity style={{...styles.buttonStyle,...props.buttonStyle}} onPress={props.onPress} disabled={props.disabled}>
 
             <Text style={ styles.testStyle}>{props.title}</Text>
         </TouchableOpacity>

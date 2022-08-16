@@ -17,6 +17,7 @@ const CardItem = ({item,isSelected,onPress}) => {
                 height : 100,
                 alignItems : "center",
                 paddingHorizontal : SIZES.padding,
+                marginTop : 10,
                 borderWidth : 2,
                 borderRadius : SIZES.radius,
                 borderColor : isSelected ? COLORS.primary : COLORS.lightGray2

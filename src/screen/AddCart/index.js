@@ -6,6 +6,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import utils from '../../../utils/Validation';
 import FormInputCheck from '../../components/FormInputCheck';
 import RadioButton from '../../components/RadioButton';
+import Button from '../../components/Button';
 
 const AddCard = ({ navigation, route }) => {
     const [selectedCard, setSelectedCard] = React.useState(null)
@@ -25,6 +26,11 @@ const AddCard = ({ navigation, route }) => {
 
         setSelectedCard(selectedCard)
     }, [])
+
+    const isEnableAddCard = () => {
+        return cardNumber != "" && cardName != "" && expiryDate != "" && cardCvv != "" &&
+            cardNumberError == "" && cardNameError == "" && expiryDateError == "" && cardCvvError == ""
+    }
 
     const renderHeader = () => {
         return (
@@ -87,10 +93,10 @@ const AddCard = ({ navigation, route }) => {
                 <FormInput
                     label="Card Number"
                     maxLength={19}
-                    keyboardType="number-pad"
+                    keyboardType="numeric"
                     value={cardNumber}
                     onChange={(value) => {
-                        setCardNumber(value.replace(/\s/g, "").replace(/(\d{4})/g, "$1 ").trim())
+                        setCardNumber(value.replace(/[^0-9]/g, '').replace(/\s/g, "").replace(/(\d{4})/g, "$1 ").trim())
                         utils.validateInput(value, 19, setCardNumberError)
                     }}
                     errorMsg={cardNumberError}
@@ -118,9 +124,10 @@ const AddCard = ({ navigation, route }) => {
                         maxLength={5}
                         placeHolder="MM/YY"
                         containerStyle={{ flex: 1 }}
+
                         value={expiryDate}
                         onChange={(value) => {
-                            setExpiryDate(value)
+                            setExpiryDate(value.replace(/[^0-9]/g, ''))
                             utils.validateInput(value, 5, setExpiryDateError)
                         }}
                         errorMsg={setExpiryDateError}
@@ -131,10 +138,10 @@ const AddCard = ({ navigation, route }) => {
                         label="CVV"
                         maxLength={3}
                         placeHolder="***"
-                        containerStyle={{ flex: 1 ,marginLeft : SIZES.radius}}
+                        containerStyle={{ flex: 1, marginLeft: SIZES.radius }}
                         value={cardCvv}
                         onChange={(value) => {
-                            setCardCvv(value)
+                            setCardCvv(value.replace(/[^0-9]/g, ''))
                             utils.validateInput(value, 3, setCardCvvError)
                         }}
                         errorMsg={setExpiryDateError}
@@ -142,12 +149,12 @@ const AddCard = ({ navigation, route }) => {
                     />
                 </View>
 
-                <View style={{alignItems : "flex-start",marginTop : SIZES.padding}}>
-                        <RadioButton
-                            label="Remember this card details"
-                            isSelected={isRemember}
-                            onPress={() => setIsRemember(!isRemember)}
-                        />
+                <View style={{ alignItems: "flex-start", marginTop: SIZES.padding }}>
+                    <RadioButton
+                        label="Remember this card details"
+                        isSelected={isRemember}
+                        onPress={() => setIsRemember(!isRemember)}
+                    />
                 </View>
             </View>
         )
@@ -179,24 +186,38 @@ const AddCard = ({ navigation, route }) => {
 
                 <View style={{
                     position: "absolute",
-                    bottom: 10,
+                    bottom: 30,
                     left: 0,
                     right: 0,
                     paddingHorizontal: SIZES.padding
                 }}>
 
                     <Text style={{ ...FONTS.h3, color: "white" }}>
-                        {cardName}
+                        {cardNumber === "" ? "1234 1234 1234 1234" : cardNumber}
                     </Text>
 
-                    <View style={{ flexDirection: "row" }}>
-                        <Text style={{ ...FONTS.body3, flex: 1, color: COLORS.white }}>{cardNumber}</Text>
-                        <Text style={{ ...FONTS.body3, color: COLORS.white, }}>{expiryDate}</Text>
+                    <View style={{ flexDirection: "row", marginTop: 10, justifyContent: "space-between", alignItems: "center" }}>
+                        <Text style={{ ...FONTS.body3, flex: 1, color: COLORS.white, }}>{cardName === "" ? "John Smith" : cardName}</Text>
+                        <Text style={{ ...FONTS.body3, color: COLORS.white, }}>{expiryDate === "" ? "000" : expiryDate}</Text>
                     </View>
 
                 </View>
 
             </ImageBackground>
+        )
+    }
+
+    const renderFooter = () => {
+        return (
+            <View style={{
+                padding: 5
+            }}>
+                <Button
+                    buttonStyle={{ backgroundColor: isEnableAddCard() ?  COLORS.primary: "gray"  }}
+                    disabled={!isEnableAddCard()}
+                    title="Add Cart"
+                    onPress={() => navigation.goBack()}></Button>
+            </View>
         )
     }
     return (
@@ -218,6 +239,8 @@ const AddCard = ({ navigation, route }) => {
                 {renderForm()}
 
             </KeyboardAwareScrollView>
+
+            {renderFooter()}
         </View>
     )
 }

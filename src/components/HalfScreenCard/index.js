@@ -1,13 +1,13 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native"
+import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native"
 import { COLORS, FONTS, SIZES, icons, data } from "../../constants";
 
 
 const HalfScreenCard = ({ item }) => {
+    const cardWidth = (Dimensions.get('window').width - 16 * 3) / 2;
     return (
         <TouchableOpacity style={{
-            height: 80,
-            width: 190,
+            width: cardWidth,
             marginRight: 5,
             borderWidth: 2,
             borderRadius: SIZES.radius,
@@ -18,7 +18,8 @@ const HalfScreenCard = ({ item }) => {
 
         }}>
             <View style={{
-                flexDirection: "row",
+                flexDirection: 'row',
+             
 
             }}>
                 {/* Card Image  */}
