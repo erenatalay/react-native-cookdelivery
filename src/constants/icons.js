@@ -49,10 +49,12 @@ const minus = require("../assets/icons/minus.png")
 const plus = require("../assets/icons/plus.png")
 const correct = require("../assets/icons/correct.png")
 const cancel = require("../assets/icons/cancel.png")
+const discount = require("../assets/icons/discount.png")
 export default {
     home,
     down_arrow,
     cancel,
+    discount,
     correct,
     minus,
     plus,

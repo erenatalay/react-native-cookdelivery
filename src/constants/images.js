@@ -31,6 +31,7 @@ const tomato_pasta = require("../assets/images/tomato-pasta.jpg");
 const logo = require("../assets/images/logo-light.png")
 const headerImage = require("../assets/images/headerimage.png")
 const card = require("../assets/images/card.png")
+const success = require("../assets/images/success.png")
 
 
 export default {
@@ -39,6 +40,7 @@ export default {
     avatar_3,
     avatar_4,
     avatar_5,
+    success,
     baked_fries,
     burger_restaurant_1,
     burger_restaurant_2,

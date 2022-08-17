@@ -17,6 +17,7 @@ import { authFetch } from "./store/actions/users";
 import FoodDetail from "./src/screen/FoodDetail";
 import AddCard from "./src/screen/AddCart";
 import Checkout from "./src/screen/Checkout";
+import Success from "./src/screen/Success";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const App = () => {
                         <Stack.Screen name="MyCard" component={MyCard} />
                         <Stack.Screen name="AddCard" component={AddCard} />
                         <Stack.Screen name="Checkout" component={Checkout} />
+                        <Stack.Screen name="Success" component={Success} />
                         <Stack.Screen name="FoodDetail" component={FoodDetail} />
                     </Stack.Navigator>
                 )
