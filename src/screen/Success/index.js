@@ -3,7 +3,7 @@ import { BackHandler, Image, Text, View } from 'react-native'
 import { COLORS, FONTS, SIZES, icons, data, images } from "../../constants";
 import Button from '../../components/Button';
 
-const Success = () => {
+const Success = ({ navigation, route }) => {
     React.useEffect(() => {
         const backHandler = BackHandler.addEventListener("hardwareBackPress", () => {
             return true;
