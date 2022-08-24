@@ -1,7 +1,7 @@
 const myProfile = {
-    name: "ByProgrammers",
+    name: "Starlince",
     profile_image: require("../assets/images/profile.png"),
-    address: "No. 88, Jln Padungan, Kuching"
+    address: "Fethiye Mah. Osmangazi/Bursa"
 }
 
 const categories = [

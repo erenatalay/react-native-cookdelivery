@@ -50,12 +50,18 @@ const plus = require("../assets/icons/plus.png")
 const correct = require("../assets/icons/correct.png")
 const cancel = require("../assets/icons/cancel.png")
 const discount = require("../assets/icons/discount.png")
+const check_circle = require("../assets/icons/check_circle.png")
+const dotted_line = require("../assets/icons/dotted_line.png")
+const map = require("../assets/icons/map.png")
 export default {
     home,
     down_arrow,
     cancel,
+    map,
     discount,
+    check_circle,
     correct,
+    dotted_line,
     minus,
     plus,
     clock,

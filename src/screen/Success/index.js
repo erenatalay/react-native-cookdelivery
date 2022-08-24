@@ -2,8 +2,11 @@ import React from 'react'
 import { BackHandler, Image, Text, View } from 'react-native'
 import { COLORS, FONTS, SIZES, icons, data, images } from "../../constants";
 import Button from '../../components/Button';
+import { useNavigation } from '@react-navigation/native';
 
-const Success = ({ navigation, route }) => {
+const Success = () => {
+    const navigation = useNavigation();
+
     React.useEffect(() => {
         const backHandler = BackHandler.addEventListener("hardwareBackPress", () => {
             return true;
@@ -12,25 +15,26 @@ const Success = ({ navigation, route }) => {
         return () => backHandler.remove();
     }, [])
     return (
-        <View style={{ flex: 1,backgroundColor : "white",paddingHorizontal : SIZES.padding }}>
+        <View style={{ flex: 1, backgroundColor: "white", paddingHorizontal: SIZES.padding }}>
             <View style={{
-                flex : 1,
-                alignItems : "center",
-                justifyContent : "center"
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center"
             }}>
-                <Image 
-                source={images.success}
-                style={{height : 150,width : 150}}
+                <Image
+                    source={images.success}
+                    style={{ height: 150, width: 150 }}
                 />
 
-                <Text style={{marginTop : SIZES.padding,...FONTS.h1}}>Congratulations</Text>
-                <Text style={{...FONTS.h3,textAlign : "center",marginTop : SIZES.base,color : COLORS.darkgray}}>Payment was successfully made.</Text>
+                <Text style={{ marginTop: SIZES.padding, ...FONTS.h1 }}>Congratulations</Text>
+                <Text style={{ ...FONTS.h3, textAlign: "center", marginTop: SIZES.base, color: COLORS.darkgray }}>Payment was successfully made.</Text>
             </View>
 
             <Button
-                    buttonStyle={{ backgroundColor: COLORS.primary }}
-                    title="Done"
-                    onPress={() => navigation.goBack()}></Button>
+                buttonStyle={{ backgroundColor: COLORS.primary }}
+                title="Done"
+                onPress={() => navigation.push("DeliveryStatus")}
+            ></Button>
         </View>
     )
 }

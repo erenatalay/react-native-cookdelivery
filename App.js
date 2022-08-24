@@ -18,6 +18,7 @@ import FoodDetail from "./src/screen/FoodDetail";
 import AddCard from "./src/screen/AddCart";
 import Checkout from "./src/screen/Checkout";
 import Success from "./src/screen/Success";
+import DeliveryStatus from "./src/screen/DeliveryStatus";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -52,6 +53,7 @@ const App = () => {
                         <Stack.Screen name="Checkout" component={Checkout} />
                         <Stack.Screen name="Success" component={Success} />
                         <Stack.Screen name="FoodDetail" component={FoodDetail} />
+                        <Stack.Screen name="DeliveryStatus" component={DeliveryStatus} />
                     </Stack.Navigator>
                 )
                     :
