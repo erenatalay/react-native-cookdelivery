@@ -19,6 +19,7 @@ import AddCard from "./src/screen/AddCart";
 import Checkout from "./src/screen/Checkout";
 import Success from "./src/screen/Success";
 import DeliveryStatus from "./src/screen/DeliveryStatus";
+import Map from "./src/screen/Map";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const App = () => {
                         <Stack.Screen name="Success" component={Success} />
                         <Stack.Screen name="FoodDetail" component={FoodDetail} />
                         <Stack.Screen name="DeliveryStatus" component={DeliveryStatus} />
+                        <Stack.Screen name="Map" component={Map} />
                     </Stack.Navigator>
                 )
                     :

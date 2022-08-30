@@ -132,11 +132,14 @@ const track_order_status = [
     }
 ]
 
+const GOOGLE_MAP_API_KEY = "AIzaSyBx-2VHEtfPXz0mBow1q2WI2f_rkQAL5-0"
+
+
 export default {
     screens,
     bottom_tabs,
     delivery_time,
     ratings,
     tags,
-    track_order_status
+    track_order_status,GOOGLE_MAP_API_KEY
 }
