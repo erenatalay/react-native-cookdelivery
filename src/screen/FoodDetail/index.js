@@ -7,11 +7,18 @@ import { COLORS, FONTS, SIZES, icons, data, } from "../../constants";
 import LineDivider from "../../components/LineDivider";
 import Rating from "../../components/Rating";
 import StepperInput from "../../components/StepperInput";
+import { useDispatch } from "react-redux";
+import { setSelectedTab } from "../../../store/actions/tab";
 
 const FoodDetail = ({ navigation }) => {
     const [foodItem, setFoodItem] = React.useState(data.vegBiryani)
     const [selectedSize, setSelectedSize] = React.useState("")
     const [qty,setQty] = React.useState(1)
+    const dispatch = useDispatch()
+    const handleBack = () => {
+        dispatch(setSelectedTab("Home"))
+        navigation.push("Home")
+    }
     const renderHeader = () => {
         return (
             <View style={{ flexDirection: "row" }}>
@@ -21,7 +28,7 @@ const FoodDetail = ({ navigation }) => {
                     justifyContent: "center",
                     
                 }}
-                    onPress={() => navigation.push("Home")}
+                    onPress={() => handleBack()}
                 >
                     <Image
                         source={icons.back}
