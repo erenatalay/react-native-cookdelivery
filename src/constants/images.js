@@ -32,6 +32,7 @@ const logo = require("../assets/images/logo-light.png")
 const headerImage = require("../assets/images/headerimage.png")
 const card = require("../assets/images/card.png")
 const success = require("../assets/images/success.png")
+const profile = require("../assets/images/profile.png")
 
 
 export default {
@@ -41,6 +42,7 @@ export default {
     avatar_4,
     avatar_5,
     success,
+    profile,
     baked_fries,
     burger_restaurant_1,
     burger_restaurant_2,

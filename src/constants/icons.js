@@ -1,4 +1,4 @@
-export const back = require("../assets/icons/back.png");
+const back = require("../assets/icons/back.png");
 export const car = require("../assets/icons/car.png");
 export const cutlery = require("../assets/icons/cutlery.png");
 export const donut = require("../assets/icons/donut.png");
@@ -55,10 +55,16 @@ const dotted_line = require("../assets/icons/dotted_line.png")
 const map = require("../assets/icons/map.png")
 const navigator1 = require("../assets/icons/navigator1.png")
 const location_pin = require("../assets/icons/location_pin.png")
+const globe = require("../assets/icons/globe.png")
+const focus = require("../assets/icons/focus.png")
+const call = require("../assets/icons/call.png")
 export default {
     home,
     location_pin,
     down_arrow,
+    focus,
+    call,
+    globe,
     cancel,
     map,
     navigator1,

@@ -21,7 +21,7 @@ const FoodDetail = ({ navigation }) => {
                     justifyContent: "center",
                     
                 }}
-                    onPress={() => navigation.goBack()}
+                    onPress={() => navigation.push("Home")}
                 >
                     <Image
                         source={icons.back}
