@@ -40,9 +40,9 @@ const Map = ({ navigation }) => {
     }, [])
 
 
-    const handleLocation = () => {
-        Geolocation.getCurrentPosition(info => setFromLoc(info))
-    }
+    // const handleLocation = () => {
+    //     Geolocation.getCurrentPosition(info => setFromLoc(info))
+    // }
 
     const renderMap = () => {
         return (
@@ -56,7 +56,7 @@ const Map = ({ navigation }) => {
                     fromLoc !== null &&
                     <Marker key={"FromLoc"}
                         coordinate={fromLoc}
-                        tracksViewChanges={false}
+                        tracksViewChanges={true}
                         rotation={angle}
                         anchor={{ x: 0.5, y: 0.5 }}
 
@@ -70,7 +70,7 @@ const Map = ({ navigation }) => {
                     toLoc !== null &&
                     <Marker key={"ToLoc"}
                         coordinate={toLoc}
-                        tracksViewChanges={false}
+                        tracksViewChanges={true}
                         rotation={angle}
                         anchor={{ x: 0.5, y: 0.5 }}
                     >
@@ -151,7 +151,7 @@ const Map = ({ navigation }) => {
                         }}
                     />
                     <IconButton
-                    onPress={() => handleLocation()}
+                    // onPress={() => handleLocation()}
                         icon={icons.focus}
                         containerStyle={{
                             ...styles.buttonStyle,
