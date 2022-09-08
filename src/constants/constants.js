@@ -1,3 +1,5 @@
+import Config from "react-native-config";
+
 const screens = {
     main_layout: "MainLayout",
     home: "Home",
@@ -132,7 +134,7 @@ const track_order_status = [
     }
 ]
 
-const GOOGLE_MAP_API_KEY = "AIzaSyBx-2VHEtfPXz0mBow1q2WI2f_rkQAL5-0"
+const GOOGLE_MAP_API_KEY = Config.GOOGLE_MAP_API_KEYS
 
 
 export default {
