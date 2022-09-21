@@ -1,7 +1,7 @@
 const myProfile = {
     name: "Starlince",
     profile_image: require("../assets/images/profile.png"),
-    address: "Fethiye Mah. Osmangazi/Bursa"
+    address: "Fethiye Mah. Ümraniye/İstanbul"
 }
 
 const categories = [
@@ -21,8 +21,8 @@ const categories = [
         icon: require("../assets/icons/rice.png")
     },
     {
-        id : 4,
-        name : "Beverages",
+        id: 4,
+        name: "Beverages",
         icon: require("../assets/icons/beverage.png")
 
     }
@@ -152,10 +152,10 @@ const myCart = [
         ...vegBiryani,
         qty: 1
     },
- 
-  
- 
- 
+
+
+
+
 
 ]
 
@@ -236,10 +236,52 @@ const fromLocs = [
         longitude: 110.35568783282145,
     }
 ]
+const notification = [
+    {
+        id :1,
+        title: "Burger King",
+        discount: "20% Off",
+        description: "Valid Until 01 Jan 2022",
+        image: require("../assets/images/burgerking.png")
+
+    },
+    {
+        id :2,
+
+        title: "KFC",
+        discount: "10% Off",
+        description: "Valid Until 02 Jan 2022",
+        image: require("../assets/images/kfc.png")
+
+    },
+    {
+        id :3,
+        title: "Little Caesars",
+        discount: "30% Off",
+        description: "Valid Until 01 Jan 2022",
+        image: require("../assets/images/letter.png")
+
+    },
+    {
+        id :4,
+        title: "Starbucks",
+        discount: "25% Off",
+        description: "Valid Until 01 Jan 2022",
+        image: require("../assets/images/starbucks.png")
+
+    },
+    {
+        id :5,
+        title: "Mcdonald's",
+        discount: "5% Off",
+        description: "Valid Until 01 Jan 2022",
+        image: require("../assets/images/mcdonalds.png")
+    }
+]
 
 export default {
     vegBiryani,
-    
+    notification,
     myProfile,
     categories,
     menu,

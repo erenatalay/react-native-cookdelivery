@@ -102,7 +102,7 @@ const Checkout = ({ navigation, route }) => {
                     <Text
                         style={{ marginLeft: SIZES.radius, width: "85%", ...FONTS.body3 }}
                     >
-                        Fethiye Mah Osmangazi Bursa
+                        Fethiye Mah. Ümraniye/İstanbul
                     </Text>
                 </View>
             </View>

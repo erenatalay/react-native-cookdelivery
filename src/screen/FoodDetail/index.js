@@ -296,7 +296,7 @@ const FoodDetail = ({ navigation }) => {
                    
                 }}>
 
-                    <Text style={{ ...FONTS.h3 }}>ByProgrammers</Text>
+                    <Text style={{ ...FONTS.h3 }}>Papyon Döner</Text>
                     <Text style={{ ...FONTS.body4, color: COLORS.gray }}>1.2 KM away from you</Text>
                     {/* Ratings */}
                 </View>

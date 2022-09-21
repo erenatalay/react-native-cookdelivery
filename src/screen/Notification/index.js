@@ -1,15 +1,33 @@
 import React from 'react'
-import {Text,View} from "react-native"
+import { Text, View,FlatList } from "react-native"
+import NotificationCard from '../../components/NotificationCard';
+import { COLORS, FONTS, SIZES, icons, data } from "../../constants";
+
 const Notification = () => {
     return (
         <View style={{
-            flexDirection : "column",
-            flex : 1,
-            justifyContent : "center",
-            alignItems : "center"
-        }}>
+            flex: 1,
+            flexDirection: "column",
 
-            <Text>Notification Screen</Text>     
+        }}>
+            <FlatList
+                style={{
+                    paddingHorizontal: SIZES.padding,
+                    marginTop: SIZES.radius,
+
+                }}
+                data={data.notification}
+                keyExtractor={item => `${item.id}`}
+
+                renderItem={({ item, index }) => (
+                    <NotificationCard data={item} />
+
+
+                )}
+                ListFooterComponent={
+                    <View style={{ height: 150 }}></View>
+                }
+            />
         </View>
     )
 }
