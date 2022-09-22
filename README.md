@@ -4,6 +4,8 @@
 - Redux;
 - Axios;
 - React Navigation;
+- Async Storage;
+- Google Maps Api;
 
 
 # Cook Delivery
