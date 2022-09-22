@@ -3,7 +3,7 @@
 - React native;
 - Redux;
 - Axios;
-- Redux;
+- React Navigation;
 
 
 # Cook Delivery
